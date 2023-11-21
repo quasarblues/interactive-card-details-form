@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <!-- custom css stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main class="main-container">
+    <div class="img-container">
+      <div class="front-of-card">
+        <img src="images/bg-card-front.png" alt="" class="front-of-card__bg">
+        <img src="images/card-logo.svg" alt="" class="front-of-card__logo">
+        <span class="front-of-card__number">0000 0000 0000 0000</span>
+        <span class="front-of-card__name">jane appleseed</span>
+        <span class="front-of-card__expire">00 / 00</span>
+      </div>
+
+      <div class="back-of-card">
+        <img class="back-of-card__bg" src="images/bg-card-back.png" alt="">
+        <span class="back-of-card__cvc">000</span>
+      </div>
+    </div>
+    <div class="form-container">
+      <form>
+        <label for="name">CARDHOLDER NAME</label>
+        <input type="text" id="name" maxlength="25" placeholder="e.g. Jane Appleseed">
+        <label for="card-number">CARD NUMBER</label>
+        <input type="text" id="card-number" maxlength="19" placeholder=" e.g. 1234 5678 9123 0000">
+        <div class="exp-cvc-container">
+          <div class="exp-info">
+            <label for="expire-date">EXP. DATE (MM/YY)</label>
+            <input type="text" id="exp-month" maxlength="2" placeholder="MM">
+            <input type="text" id="exp-year" maxlength="2" placeholder="YY">
+          </div>
+          <div class="cvc-info">
+            <label for="cvc">CVC</label>
+            <input type="text" id="cvc" maxlength="3" placeholder="e.g. 123">
+          </div>
+        </div>
+        <button class="confirm-btn">Confirm</button>
+      </form>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+
+</html>

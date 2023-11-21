@@ -1,0 +1,337 @@
+/* CSS RESET Thanks Josh Comeau */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:root {
+  /* Input Colors */
+  --active-input-border: linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+  --input-error: hsl(0, 100%, 66%);
+  --form-background: white;
+  --light-violet: hsl(270, 3%, 87%);
+  --dk-violet: hsl(279, 6%, 55%);
+  --very-dk-violet: hsl(278, 68%, 11%);
+
+  /* Font */
+  --standard-size: 18px;
+  --weight-500: 500;
+  --font-family: 'Space Grotesk', sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--standard-size);
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.img-container {
+  width: 50%;
+  display: flex;
+  position: relative;
+  background-image: url('images/bg-main-desktop.png');
+  background-size: 55% 100%;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.front-of-card>*:not(.front-of-card__bg),
+.back-of-card>*:not(.back-of-card__bg) {
+  position: absolute;
+}
+
+.front-of-card {
+  --card-padding: 2rem;
+  position: absolute;
+  top: 19%;
+  right: 30%;
+}
+
+.front-of-card__logo {
+  top: var(--card-padding);
+  left: var(--card-padding);
+}
+
+.front-of-card__number {
+  font-size: 1.7rem;
+  letter-spacing: 3px;
+  left: var(--card-padding);
+  top: 55%;
+}
+
+.front-of-card__name {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  left: var(--card-padding);
+  top: 80%;
+}
+
+.front-of-card__expire {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  top: 80%;
+  left: 80%;
+}
+
+.back-of-card {
+  position: absolute;
+  top: 53%;
+  right: 18%;
+}
+
+.card-wrapper {
+  border: 2px solid yellow;
+}
+
+.back-of-card__cvc {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  top: 45%;
+  left: 80%;
+}
+
+/* Form styling */
+.form-container {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  padding-left: 3rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 25rem;
+}
+
+form label {
+  display: block;
+  font-size: 13px;
+  color: var(--very-dk-violet);
+  letter-spacing: 1.5px;
+  margin-bottom: 0.5rem;
+}
+
+.form-container input {
+  margin-bottom: 1.5rem;
+  border-radius: 5px;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--light-violet);
+  color: var(--light-violet);
+}
+
+::placeholder {
+  color: var(--light-violet);
+}
+
+.exp-cvc-container {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.exp-info {
+  width: 50%
+}
+
+.exp-info input {
+  width: 45%;
+}
+
+.cvc-info {
+  width: 50%;
+}
+
+.cvc-info input {
+  width: 100%;
+}
+
+button.confirm-btn {
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 0.8rem 1rem;
+  background-color: var(--very-dk-violet);
+  color: white;
+}
+
+@media (max-width: 81.625rem) {
+  .front-of-card {
+    --card-padding: 1rem;
+  }
+
+  .front-of-card {
+    top: 21%;
+  }
+
+  .back-of-card {
+    top: 49%;
+  }
+
+  .front-of-card__bg,
+  .back-of-card__bg {
+    width: 375px;
+  }
+
+  .front-of-card__logo {
+    width: 20%;
+  }
+
+  .front-of-card__number {
+    font-size: 1.5rem;
+  }
+
+  .front-of-card__name,
+  .front-of-card__expire,
+  .back-of-card__cvc {
+    font-size: 0.8rem;
+  }
+
+}
+
+@media (max-width: 68.75rem) {
+  .front-of-card {
+    --card-padding: 1rem;
+  }
+
+  .front-of-card {
+    top: 24%;
+  }
+
+  .back-of-card {
+    top: 45%;
+  }
+
+  .front-of-card__bg,
+  .back-of-card__bg {
+    width: 325px;
+  }
+
+  .front-of-card__number {
+    font-size: 1rem;
+  }
+
+  .front-of-card__name,
+  .front-of-card__expire,
+  .back-of-card__cvc {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 54.375rem) {
+  .main-container {
+    flex-direction: column;
+
+  }
+
+  .img-container {
+    width: 100%;
+    height: 40vh;
+    align-items: center;
+    background-image: url('images/bg-main-mobile.png');
+    background-size: 100% 80%;
+  }
+
+  .form-container {
+    justify-content: center;
+    width: 100%;
+    padding: 0.5rem 1rem;
+  }
+
+  .front-of-card {
+    top: 40%;
+    right: 18%;
+    z-index: 1;
+  }
+
+  .back-of-card {
+    top: 10%;
+    right: 5%;
+  }
+
+}
+
+@media (max-width: 23.4375rem) {
+
+  .front-of-card__bg,
+  .back-of-card__bg {
+    width: 265px;
+  }
+
+}
