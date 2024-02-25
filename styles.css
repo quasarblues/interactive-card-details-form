@@ -193,7 +193,11 @@ form label {
   border-radius: 5px;
   padding: 0.5rem 0.6rem;
   border: 1px solid var(--light-violet);
-  color: var(--light-violet);
+  color: black;
+}
+
+input:focus {
+  outline-color: var(--active-input-border);
 }
 
 ::placeholder {

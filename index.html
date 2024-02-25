@@ -27,7 +27,11 @@
         <img src="images/card-logo.svg" alt="" class="front-of-card__logo">
         <span class="front-of-card__number">0000 0000 0000 0000</span>
         <span class="front-of-card__name">jane appleseed</span>
-        <span class="front-of-card__expire">00 / 00</span>
+        <div class="front-of-card__expire">
+          <span class="front-of-card__expire_month">00</span>
+          /
+          <span class="font-of-card__expire_year">00</span>
+        </div>
       </div>
 
       <div class="back-of-card">
@@ -36,20 +40,21 @@
       </div>
     </div>
     <div class="form-container">
-      <form>
+      <form id="cc-form">
         <label for="name">CARDHOLDER NAME</label>
-        <input type="text" id="name" maxlength="25" placeholder="e.g. Jane Appleseed">
+        <input type="text" id="name" name="name" maxlength="26" placeholder="e.g. Jane Appleseed">
         <label for="card-number">CARD NUMBER</label>
-        <input type="text" id="card-number" maxlength="19" placeholder=" e.g. 1234 5678 9123 0000">
+        <input type="text" id="card-number" name="cardnumber" placeholder=" e.g. 1234 5678 9123 0000" maxlength="19"
+          required>
         <div class="exp-cvc-container">
           <div class="exp-info">
             <label for="expire-date">EXP. DATE (MM/YY)</label>
-            <input type="text" id="exp-month" maxlength="2" placeholder="MM">
-            <input type="text" id="exp-year" maxlength="2" placeholder="YY">
+            <input type="text" id="exp-month" name="expmonth" maxlength="2" placeholder="MM">
+            <input type="text" id="exp-year" name="expyear" maxlength="2" placeholder="YY">
           </div>
           <div class="cvc-info">
             <label for="cvc">CVC</label>
-            <input type="text" id="cvc" maxlength="3" placeholder="e.g. 123">
+            <input type="text" id="cvc" name="cvc" maxlength="3" placeholder="e.g. 123">
           </div>
         </div>
         <button class="confirm-btn">Confirm</button>
